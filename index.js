@@ -17,6 +17,12 @@ document.addEventListener("keydown", my_func);
 
 function my_func(event) {
     let guess = event.key.toLowerCase();
+    if (!letter.includes(guess)) {
+        return;
+    }
+    if (guesses.includes(guess)) {
+        return;
+    }
     guesses.push(guess);
 
     if (guess == answer) {
